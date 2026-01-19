@@ -71,7 +71,7 @@ Em ambos os terminais, você pode usar os seguintes comandos:
 
 O projeto implementa um mecanismo de **Limpeza Automática** essencial para garantir que nenhum recurso fique órfão. Isso é feito através do [`utils/monitor.js`](/utils/monitor.js), que atua como um **"Processo Zumbi Reverso"**:
 
-1.  **Monitoramento:** O [`monitor.js`]/utils/monitor.js) é iniciado como um processo filho *desanexado* (`detached: true`) do processo principal do Node.js.
+1.  **Monitoramento:** O [`monitor.js`](/utils/monitor.js) é iniciado como um processo filho *desanexado* (`detached: true`) do processo principal do Node.js.
 2.  **Vigilância:** Ele monitora continuamente o PID do processo pai.
 3.  **Limpeza Garantida:** Se o processo principal do Node.js morrer (seja por um `exit` normal, um erro não tratado, ou um sinal de interrupção como `Ctrl+C`), o monitor detecta a morte do pai e executa imediatamente os comandos `podman rm -f <container_name>` para garantir que o container associado seja **parado e removido**, limpando o ambiente e evitando containers órfãos.
 
@@ -80,6 +80,7 @@ Essa arquitetura garante que os ambientes efêmeros sejam realmente temporários
 
 <details>
 <summary><strong>Nota sobre Dependências (npm podman, etc.)</strong></summary>
+  
 Você notará que este projeto **não utiliza** bibliotecas de terceiros (como `npm podman` ou SDKs) para interagir com o Podman. A comunicação é feita diretamente através da execução de comandos `podman` via `child_process`.
 
 **Por quê?**
