@@ -4,7 +4,7 @@
 [![Node.js Version](https://img.shields.io/badge/Node.js-%3E%3D18-brightgreen)](https://nodejs.org/)
 [![Podman](https://img.shields.io/badge/Podman-22c5fb)](https://podman.io//)
 
-![N|Solid](https://i.imgur.com/dytEofy.gif)
+![N|Solid](https://i.imgur.com/ef7eqSu.gif)
 
 ---
 
